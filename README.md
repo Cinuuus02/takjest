@@ -178,6 +178,111 @@ int main()
     return 0;
 }
 
+________________________________________________poprawa
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double num1, num2, num3;
+    double max, sumAbs;
+
+    cout << "Wprowadz trzy liczby typu double: ";
+    cin >> num1 >> num2 >> num3;
+
+    // Obliczanie maksymalnej liczby
+    max = num1;
+    if (num2 > max) {
+        max = num2;
+    }
+    if (num3 > max) {
+        max = num3;
+    }
+
+    // Obliczanie sumy wartości bezwzględnych
+    sumAbs = 0;
+    if (num1 < 0) sumAbs -= num1; else sumAbs += num1;
+    if (num2 < 0) sumAbs -= num2; else sumAbs += num2;
+    if (num3 < 0) sumAbs -= num3; else sumAbs += num3;
+    cout << "Maksymalna liczba: " << max << endl;
+    cout << "Suma wartosci bezwzglednych: " << sumAbs << endl;
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+bool check_triangle(double a, double b, double c) {
+    if (a <= 0 || b <= 0 || c <= 0) {
+        cout << "Error: number should be positive" << endl;
+        return false;
+    }
+    if (a + b > c && a + c > b && b + c > a) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    double a, b, c;
+    cout << "Wprowadz 3 boki trojkata: ";
+    cin >> a >> b >> c;
+    if (check_triangle(a, b, c)) {
+        cout << "Podane liczby moga byc bokami trojkata" << endl;
+    } else {
+        cout << "Podane liczby nie moga byc bokami trojkata" << endl;
+    }
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+
+string encrypt(string s, int n) {
+    string encrypted = "";
+    for (int i = 0; i < s.length(); i++) {
+        encrypted += char(int(s[i]) + n);
+    }
+    return encrypted;
+}
+
+int main() {
+    string s;
+    int n;
+    cout << "Wprowadz tekst: ";
+    cin >> s;
+    cout << "Wprowadz liczbe: ";
+    cin >> n;
+    cout << "Zaszyfrowany tekst: " << encrypt(s, n) << endl;
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+
+int f(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    return 2 * f(n-1) + f(n-2);
+}
+
+int main() {
+    int n;
+    cout << "Wprowadz n: ";
+    cin >> n;
+    cout << "f(" << n << ") = " << f(n) << endl;
+    return 0;
+}
+
+
+
+
 
   
   
